@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,8 @@ export class AppComponent {
     const suggestedName = 'Superuser';
   }
 
-  onSubmit(){
-    console.log('Submitted!');
+  onSubmit(form: ElementRef){
+    console.log(form);
   }
 
 }
