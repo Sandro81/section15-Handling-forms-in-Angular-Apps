@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'section15-Handling-forms-in-Angular-Apps';
+  suggestUserName() {
+    const suggestedName = 'Superuser';
+  }
+
+  onSubmit(){
+    console.log('Submitted!');
+  }
+
 }
