@@ -276,7 +276,16 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 196. TD: Setting and Patching Form Values </h5>
           <p class="card-text"> To populate the input with values we can doing... </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text">In the component we need to replicate the exact content of the form like -><code> this.signupForm.setValue(&#123;
+            <br>
+            userData:&#123;<br>
+            username: suggestedName,<br>
+            email: ''<br>
+            },<br>
+            secret: 'pet',<br>
+            questionAnswer: '',<br>
+            gender: 'male'<br>
+            });</code></p>
         </div>
       </div>
       <!--
