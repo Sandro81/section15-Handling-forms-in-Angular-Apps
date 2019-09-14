@@ -126,10 +126,28 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 188. TD: Adding Validation to check User Input </h5>
           <p class="card-text"> Whilst you should still validate input on the server as the front-end can always be tricked, you can greatly enhance user experience by also validating the input here, for example we want to make sure that none of the fields here is empty and that the e-mail address actually is a valid e-mail address. </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text">To validate the input, we can add paramenter like <code>required email</code></p>
+          <p class="card-text">Angular dynamically add some classes, giving us information, some CSS classes, giving us information about the state of the individual control here whether it is dirty or not, so whether we did change the initial value, whether it touched or not so whether we clicked into it or not and whether it is valid or not. <code>&#60;input _ngcontent-vex-c0="" class="form-control <b>ng-pristine ng-invalid ng-touched</b>" id="username" name="username" ngmodel="" required="" type="text" ng-reflect-required="" ng-reflect-name="username" ng-reflect-model=""></code></p>
         </div>
       </div>
 
+
+
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 189. Built-in Validators & Using HTML5 Validation</h5>
+          <h5 class="card-title">Built-in Validators & Using HTML5 Validation</h5>
+          <p class="card-text">  Which Validators do ship with Angular? </p>
+          <p class="card-text"> Check out the Validators class: https://angular.io/api/forms/Validators - these are all built-in validators, though that are the methods which actually get executed (and which you later can add when using the reactive approach). </p>
+          <p class="card-text"> For the template-driven approach, you need the directives. You can find out their names, by searching for "validator" in the official docs:
+            <a href="https://angular.io/api?type=directive" target="_blank">https://angular.io/api?type=directive</a>  - everything marked with "D" is a directive and can be added to your template. </p>
+          <p class="card-text">
+            Additionally, you might also want to enable HTML5 validation (by default, Angular disables it). You can do so by adding the ngNativeValidate  to a control in your template. </p>
+        </div>
+      </div>
 
       <!--
       <br>
@@ -141,8 +159,6 @@
         </div>
       </div>
 -->
-
-
 
 
 
