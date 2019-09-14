@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
@@ -11,7 +11,8 @@
               id="username"
               class="form-control"
               ngModel
-              name="username">
+              name="username"
+              required>
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
           <div class="form-group">
@@ -20,7 +21,9 @@
                    id="email"
                    name="email"
                    ngModel
-                   class="form-control">
+                   class="form-control"
+                   required
+                   email>
           </div>
         </div>
         <div class="form-group">
@@ -82,21 +85,50 @@
         </div>
       </div>
 
-          <br>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Lesson 185. TD: Submitting and Using the Form</h5>
-              <p class="card-text"> In the last lecture, we configured our form here, we added some control by placing ngModel on the inputs, now let's make this form submittable so that we can actually see what the user entered.</p>
-              <p class="card-text">To access to the data contained into the form -> <code>&#60;form (ngSubmit)="onSubmit(f)" #f="ngForm"></code>
-                <br> <b>#f</b> is the local reference of the form data that we need to pass to the component.</p>
-              <p class="card-text">In the component we need to import ngForm and for example -> <code>  onSubmit(form: NgForm)&#123;
-                console.log(form);
-                }</code></p>
-            </div>
-          </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 185. TD: Submitting and Using the Form</h5>
+          <p class="card-text"> In the last lecture, we configured our form here, we added some control by placing ngModel on the inputs, now let's make this form submittable so that we can actually see what the user entered.</p>
+          <p class="card-text">To access to the data contained into the form -> <code>&#60;form (ngSubmit)="onSubmit(f)" #f="ngForm"></code>
+            <br> <b>#f</b> is the local reference of the form data that we need to pass to the component.</p>
+          <p class="card-text">In the component we need to import ngForm and for example -> <code>  onSubmit(form: NgForm)&#123;
+            console.log(form);
+            }</code></p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 187. TD: Accessing the Form with @ViewChild </h5>
+          <p class="card-text"> It is possible to access to the local reference also using the @ViewChild() </p>
+          <p class="card-text"> <code>export class AppComponent &#123; <br>
+            <b>@ViewChild('f', &#123;static: false}) signupForm: NgForm;</b><br>
+            <br>
+            suggestUserName() &#123;<br>
+            const suggestedName = 'Superuser';<br>
+            }<br>
+            <br>
+            onSubmit() &#123;<br>
+            console.log(this.signupForm);<br>
+            }<br>
+
+            }</code></p>
+          <p class="card-text">To access to the data contained into the form -> <code>&#60;form (ngSubmit)="onSubmit()" #f="ngForm"></code>
+            <br> <b>#f</b> is the local reference of the form data that we need to pass to the component.</p>
+        </div>
+      </div>
 
 
-
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 188. TD: Adding Validation to check User Input </h5>
+          <p class="card-text"> Whilst you should still validate input on the server as the front-end can always be tricked, you can greatly enhance user experience by also validating the input here, for example we want to make sure that none of the fields here is empty and that the e-mail address actually is a valid e-mail address. </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
 
       <!--
