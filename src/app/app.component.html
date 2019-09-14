@@ -86,10 +86,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Lesson 185. TD: Submitting and Using the Form</h5>
-              <p class="card-text"> In the last lecture, we configured our form here, we added some control by placing ngModel on the inputs, now let's make this form submittable so that we can actually see what the user entered.
-
-              </p>
-              <p class="card-text"> <code>routerLink="/servers" </code></p>
+              <p class="card-text"> In the last lecture, we configured our form here, we added some control by placing ngModel on the inputs, now let's make this form submittable so that we can actually see what the user entered.</p>
+              <p class="card-text">To access to the data contained into the form -> <code>&#60;form (ngSubmit)="onSubmit(f)" #f="ngForm"></code></p>
+              <p class="card-text">In the component we need to import ngForm and -> <code>&#60;form (ngSubmit)="onSubmit(f)" #f="ngForm"></code></p>
             </div>
           </div>
 
