@@ -75,7 +75,18 @@
           [disabled]="!f.valid">
           Submit</button>
       </form>
-
+      <br>
+      <div class="card">
+        <div class="card-body" *ngIf="submitted">
+          <h5 class="card-title">Your Data </h5>
+          <p class="card-text">
+          <p>Username: {{user.username}}</p>
+          <p>Mail: {{user.email}}</p>
+          <p>Secret Question: Your first {{user.secretQuestion}}</p>
+          <p>Answer: {{user.answer}}</p>
+          <p>Gender: {{user.gender}}</p>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -286,6 +297,38 @@
             questionAnswer: '',<br>
             gender: 'male'<br>
             });</code></p>
+
+          <p class="card-text">To be able to not override the content of every data of the form, we can use the form.patchValue method instead -><br> <code>this.signupForm.form.patchValue(&#123;<br>
+            userData: &#123;<br>
+            username: suggestedName<br>
+            }<br>
+            });</code></p>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson  197. TD: Using Form Data </h5>
+          <p class="card-text">This is how you can extract the data, how you can use it, how you can add a property like submitted to make sure you only display certain sections of the form was submitted and how you in the end use that data. </p>
+          <p class="card-text"> on component <code>  onSubmit() &#123; <br>
+            this.submitted = true;<br>
+            this.user.username = this.signupForm.value.userData.username;<br>
+            this.user.email = this.signupForm.value.userData.email;<br>
+            this.user.secretQuestion = this.signupForm.value.secret;<br>
+            this.user.answer = this.signupForm.value.questionAnswer;<br>
+            this.user.gender = this.signupForm.value.gender;<br>
+            }</code></p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 198. TD: Resetting Forms</h5>
+          <p class="card-text"> Now let's say we did extract all the data and now we want to reset the form, well turns out this is super simple. On our form, signupForm in this case which again is just fetched directly from our template with @ViewChild, on this form, we can call reset like this and this will reset the form and what this means is it will not only empty all the inputs, you could do this with setValue too as you learned, it will also reset the state like the valid, the touched and so on, these properties. </p>
+          <p class="card-text"> <code>this.signupForm.reset();</code></p>
         </div>
       </div>
       <!--
