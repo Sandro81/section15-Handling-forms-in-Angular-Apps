@@ -37,7 +37,11 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+        [disabled]="!f.valid">
+          Submit</button>
       </form>
 
 
@@ -148,6 +152,21 @@
             Additionally, you might also want to enable HTML5 validation (by default, Angular disables it). You can do so by adding the ngNativeValidate  to a control in your template. </p>
         </div>
       </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 190. TD: Using the Form State </h5>
+          <p class="card-text"> - </p>
+          <p class="card-text">Disable the Submit button reading the ng class <code>&#60;button
+            type="submit"
+            class="btn btn-primary"
+            <b>[disabled]="!f.valid"</b>>
+            Submit&#60;/button> </code> if the local reference f is not valida, so disabling the button</p>
+        </div>
+      </div>
+
+
 
       <!--
       <br>
