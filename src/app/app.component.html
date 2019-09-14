@@ -41,7 +41,7 @@
           </textarea>
         </div>
         <p>Your reply: {{answer}}</p>
-        <p *ngIf="!userData.valid && userData.touched"></p>
+        <p *ngIf="!userData.valid && userData.touched">User Data is invalid!</p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
@@ -53,6 +53,19 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <label class="form-check-label" for="exampleRadios2">
+           Female
+          </label>
+        </div>
+
         <button
           type="submit"
           class="btn btn-primary"
@@ -236,10 +249,24 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 194. TD: Grouping Form Controls </h5>
+          <p class="card-text"> To check the validation data of the entire form </p>
+          <p class="card-text">On the div <code> &#60;div id="user-data"<br>
+            <b>ngModelGroup="userData"<br>
+              #userData="ngModelGroup"</b>></code></p>
+          <p class="card-text">On the message <code>        &#60;p *ngIf="!userData.valid && userData.touched">User Data is invalid!&#60;/p></code></p>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 195. TD: Handling Radio Buttons </h5>
           <p class="card-text"> - </p>
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
+
 
       <!--
       <br>
