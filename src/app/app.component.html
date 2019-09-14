@@ -6,17 +6,30 @@
         <div id="user-data">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" class="form-control">
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              ngModel
+              name="username">
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
-            <input type="email" id="email" class="form-control">
+            <input type="email"
+                   id="email"
+                   name="email"
+                   ngModel
+                   class="form-control">
           </div>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select class="form-control" id="secret">
+          <select
+            class="form-control"
+            id="secret"
+            ngModel
+            name="secret">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
@@ -50,8 +63,37 @@
             <b>FormsModule,</b> <br>
             AppRoutingModule<br>
             ],</code></p>
+
+          <p class="card-text"> So you still need to register controls manually, you need to tell Angular hey within that form element, what should be an actual control of my form? And this is what we're going to do now, tell Angular how does our form look like, which controls do we want to have? In the template driven approach, this is super simple. </p>
+          <p class="card-text">  You simply pick the input which you want to add as a control, like this input here and I'm just going to structure it a bit different to split it up over multiple lines to make it easier to read and then you add ngModel, like this. Now you might already know ngModel from the two-way binding, two-way data binding and it actually is the same directive. In two-way data binding though, you saw that we use that with square brackets and parentheses wrapped in ngModel.</p>
+
+          <p class="card-text"> <code> &#60;input <br>
+            type="text"<br>
+            id="username"<br>
+            class="form-control"<br>
+            <b>ngModel</b>></code> <br>
+
+            This will be enough to tell Angular, hey this input is actually a control of my form, so ngModel in the end is a directive made available in the forms module, something I mentioned earlier in the course when we had a look at two-way data binding.</p>
+
+
+          <p class="card-text">Now for this to work, for this to be recognized as a control in your form, we need to give Angular one other piece of information, the name of this control. Right now, it would see OK this input should be part of the Javascript object representation of this form, so whatever the user enters here as a value should be the value of this control, of what's the name of that control.
+            <br> <code>name="username"</code> Well and the same is true for the select here which is just another type of HTML input. Here we can also add ngModel and we can add a name, like secret because I'm asking for a secret question here and with that, we registered all the controls,</p>
+
         </div>
       </div>
+
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Lesson 185. TD: Submitting and Using the Form</h5>
+              <p class="card-text"> In the last lecture, we configured our form here, we added some control by placing ngModel on the inputs, now let's make this form submittable so that we can actually see what the user entered.
+
+              </p>
+              <p class="card-text"> <code>routerLink="/servers" </code></p>
+            </div>
+          </div>
+
+
 
 
 
